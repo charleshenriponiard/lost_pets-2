@@ -1,0 +1,19 @@
+<h1>Pets</h1>
+<%= link_to "new", new_pet_path %>
+
+<div class="container">
+  <% @pets.each do |pet| %>
+  <%= pet.name %>
+  <%= pet.address %>
+  <%= pet.species %>
+  <p><%= pet.name %> found on <%= pet.found_on_ago %> days ago </p>
+  <%= link_to "See more", pet_path(pet), class: "btn btn-primary" %>
+  <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-info" %>
+
+  <%= link_to "Delete", pet_path(pet), method: :delete, data: {confirm: "are you sure ?"}, class: "btn btn-danger" %>
+<% end %>
+
+</div>
+
+
+
